@@ -7,3 +7,8 @@ def index(request):
         "cabs" : Cabs.objects.all()
     })
 
+def cab(request, cab_id):
+    cab = Cabs.objects.get(pk=cab_id)
+    return render(request, "cabs/cab.html",{
+        "cab" : cab
+    })

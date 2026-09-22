@@ -1,0 +1,15 @@
+{% extends "cabs/layout.html" %}
+
+{% block body %}
+
+    <h1> Cabs {{ cab.id }}</h1>
+
+    <ul>
+        <li> Pick : {{ cab.pick }} </li>
+        <li> Drop : {{ cab.drop }} </li>
+        <li> Cost : {{ cab.cost }}</li>
+    </ul>
+
+
+
+{% endblock %}

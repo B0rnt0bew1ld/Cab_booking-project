@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title> Cabs </title>
-    </head>
-    <body>
-        <h1>Welcome to Cabs!!</h1>
+{% extends "cabs/layout.html" %}
 
-        <ul>
-            {% for cab in cabs %}
-                <li>{{cab}}</li>
-            {% endfor %}
-        </ul>
-        {% block body %}
-        {% endblock %}
-    </body>
-</html>
+{% block body %}
+    <h1>Welcome to Cabs!!</h1>
+
+    <ul>
+        {% for cab in cabs %}
+            <li>{{cab}}</li>
+        {% endfor %}
+    </ul>
+        
+{% endblock %}
