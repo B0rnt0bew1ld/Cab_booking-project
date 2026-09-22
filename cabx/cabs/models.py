@@ -6,13 +6,13 @@ class Station(models.Model):
     city = models.CharField(max_length=64)
 
     def __str__(self):
-        return f"City name : {self.city} and Pincode : {self.pin_code}"
+        return f"{self.city} ({self.pin_code})"
 
 class Cabs(models.Model):
-    pick = models.CharField(max_length=64)
-    drop = models.CharField(max_length=64)
+    pick = models.ForeignKey(Station, on_delete= models.CASCADE, related_name="departures")
+    drop = models.ForeignKey(Station, on_delete=models.CASCADE, related_name="arrivals")
     cost = models.IntegerField()
 
     def __str__(self):
-        return f"Your picking point : {self.pick}, dropping point : {self.drop} and cost : Rs {self.cost}."
+        return f"{self.pick} to {self.drop} costs Rs {self.cost}."
     
