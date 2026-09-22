@@ -1,12 +1,15 @@
 {% extends "cabs/layout.html" %}
 
 {% block body %}
-    <h1>Welcome to Cabs!!</h1>
+    <h1> Cabs!</h1>
 
     <ul>
         {% for cab in cabs %}
-            <li>{{cab}}</li>
-        {% endfor %}
+            <a href="{% url 'cab' cab.id %}">
+                <li>Cab {{cab.id}}: {{ cab.pick }} to {{ cab.drop }}</li>
+            </a>
+            
+        {% endfor %}    
     </ul>
         
 {% endblock %}
